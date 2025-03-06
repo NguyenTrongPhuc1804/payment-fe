@@ -1,0 +1,9 @@
+services:
+  fe-payment:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    container_name: fe_container
+    ports:
+      - "5173:5173"
