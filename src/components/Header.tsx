@@ -63,7 +63,7 @@ export function Header() {
           />
         </svg>
 
-        <Link to={"/about"} className="flex items-center">
+        <Link to={"/"} className="flex items-center">
           Home
         </Link>
       </Typography>
@@ -119,7 +119,7 @@ export function Header() {
             {JSON.parse(localStorage.getItem("profile") || "{}").email}
           </Typography>
           <Button
-            onClick={() => logOut()}
+            onClick={logOut}
             variant="gradient"
             size="sm"
             className="hidden lg:inline-block"
@@ -172,7 +172,7 @@ export function Header() {
 
           <div className="flex items-center gap-x-1">
             <Button
-              onClick={() => logOut()}
+              onClick={logOut}
               variant="gradient"
               size="sm"
               className="  lg:inline-block"

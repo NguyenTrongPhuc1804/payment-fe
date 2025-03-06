@@ -77,8 +77,8 @@ const App: FC<{}> = () => {
           {!isLogin ? (
             <Route path="" element={<LoginPage />} />
           ) : (
-            <Route path="/" element={<UserTheme />}>
-              <Route path="/about" element={<HomePage />} />
+            <Route path="" element={<UserTheme />}>
+              <Route path="/" element={<HomePage />} />
               <Route path="/account" element={<AccountPage />} />
             </Route>
           )}

@@ -45,7 +45,7 @@ const LoginPage = () => {
 
       setIsLogin?.(true);
 
-      navigate("/about");
+      navigate("/");
     } catch (error: any) {
       console.error("Error signing in:", error.message);
     }

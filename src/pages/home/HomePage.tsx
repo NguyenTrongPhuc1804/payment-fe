@@ -18,6 +18,7 @@ import { db } from "../../firebase/firebaseConfig";
 const HomePage: FC<{}> = () => {
   const { amount, totalPaidSuccess, totalPending } = useContext(AuthContext);
 
+  //--------------------------------------------------------------------------------
   const [data, setData] = useState<Transaction[]>([]);
   const [search, setSearch] = useState<string>("");
 
@@ -67,7 +68,7 @@ const HomePage: FC<{}> = () => {
 
   return (
     <section className="w-full h-full">
-      <div className="w-[80%]  mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
+      <div className="w-full md:w-[80%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         <CardItem
           title="Total Balance"
           content={amount?.amount_balance}
@@ -83,13 +84,13 @@ const HomePage: FC<{}> = () => {
           </Typography>
           <div className="my-4">
             <Typography style={{ fontSize: 18, fontWeight: 600 }} color="black">
-              Total transaction amount of user
+              Total transaction of user
             </Typography>
             <LineChart />
           </div>
           <div className="">
             <Typography style={{ fontSize: 18, fontWeight: 600 }} color="black">
-              Successful and failed transaction rate.
+              Successful and pending transaction
             </Typography>
             <BarRaceChart />
           </div>

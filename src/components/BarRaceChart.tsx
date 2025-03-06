@@ -100,7 +100,7 @@ const BarRaceChart: FC<{}> = () => {
     },
     yAxis: {
       type: "category",
-      data: ["success", "pending", "C", "D", "E"],
+      data: ["success", "pending"],
       inverse: true,
       animationDuration: 300,
       animationDurationUpdate: 300,
