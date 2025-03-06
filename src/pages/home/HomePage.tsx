@@ -82,17 +82,17 @@ const HomePage: FC<{}> = () => {
           <Typography style={{ fontSize: 24, fontWeight: 600 }} color="black">
             Cash flow
           </Typography>
-          <div className="my-4">
-            <Typography style={{ fontSize: 18, fontWeight: 600 }} color="black">
-              Total transaction of user
-            </Typography>
-            <LineChart />
-          </div>
           <div className="">
             <Typography style={{ fontSize: 18, fontWeight: 600 }} color="black">
               Successful and pending transaction
             </Typography>
             <BarRaceChart />
+          </div>
+          <div className="my-4">
+            <Typography style={{ fontSize: 18, fontWeight: 600 }} color="black">
+              Total transaction of user
+            </Typography>
+            <LineChart />
           </div>
         </div>
         <div className="col col-span-3 grid grid-rows-3 ">
