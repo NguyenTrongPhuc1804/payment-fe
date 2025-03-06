@@ -86,18 +86,6 @@ const App: FC<{}> = () => {
 
         {/* global component */}
         <ModalDefault open={open} handleOpen={handleOpen} />
-        <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick={false}
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        />
         <LoadingSpinner />
       </ModalContext.Provider>
     </AuthContext.Provider>

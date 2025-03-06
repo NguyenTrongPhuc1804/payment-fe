@@ -1,5 +1,5 @@
 import React, { CSSProperties, FC, useContext, useState } from "react";
-import { DotLoader } from "react-spinners";
+import { DotLoader, ClockLoader } from "react-spinners";
 import { ModalContext } from "../context/modal.context";
 
 const override: CSSProperties = {
@@ -18,7 +18,7 @@ const LoadingSpinner: FC<{}> = () => {
     <div
       className={`sweet-loading ${
         !isLoading ? "hidden" : "block"
-      } fixed inset-0 flex justify-center items-center`}
+      } fixed z-50 inset-0 flex justify-center items-center bg-gray-500 bg-opacity-50`}
     >
       <DotLoader
         color={color}

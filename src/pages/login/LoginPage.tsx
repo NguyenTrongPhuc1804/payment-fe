@@ -1,11 +1,12 @@
 import { Button } from "@material-tailwind/react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { auth, db } from "../../firebase/firebaseConfig";
 import { AuthContext } from "../../context/auth.context";
 import { useNavigate } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { UserAuth } from "../../interfaces/user.interfaces";
+import { ModalContext } from "../../context/modal.context";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -14,10 +15,12 @@ const LoginPage = () => {
   const [password, setPassword] = useState<string>("admin123");
 
   //--------------------------------------------------------------------------------
-  const { isLogin, setIsLogin } = useContext(AuthContext);
+  const { setIsLogin } = useContext(AuthContext);
+  const { setIsLoading } = useContext(ModalContext);
 
   //--------------------------------------------------------------------------------
   const signIn = async (email: string, password: string) => {
+    setIsLoading?.(true);
     try {
       const userCredential = await signInWithEmailAndPassword(
         auth,
@@ -44,9 +47,11 @@ const LoginPage = () => {
       localStorage.setItem("amount", JSON.stringify(amount));
 
       setIsLogin?.(true);
+      setIsLoading?.(false);
 
       navigate("/");
     } catch (error: any) {
+      setIsLoading?.(true);
       console.error("Error signing in:", error.message);
     }
   };
